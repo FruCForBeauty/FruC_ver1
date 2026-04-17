@@ -1,0 +1,80 @@
+.box {
+    width: 100%;
+    height: 80px;
+    background-color: #e73060;
+    color: #ffffff;
+    text-align: left;
+    font-size: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px; /* 行間を5pxに固定 */
+    padding-left: 5px;
+    position: relative;
+  }
+  
+  /* 以下の指定が必須 */
+  .box p {
+    margin: 0;
+    line-height: 0;
+  }
+
+  .annotation {
+    font-size: 5px;       /* 基本サイズ（20px）の半分の比率で目立たなくする */
+    vertical-align: botto; /* 文字の上半分に寄せる（上付き文字配置） */
+    line-height: 0;        /* 垂直方向の占有高さを0pxに無効化（レイアウト干渉防止の要） */
+    margin-left: 1px;      /* 直前の文字と密着しすぎるのを防ぐ最低限の余白 */
+  }
+
+  .bottom-annotation {
+    position: absolute;
+    bottom: 5px;   /* ボックスの下端から5pxの位置に固定 */
+    left: 20px;    /* .boxのpadding(20px)と左端を合わせる */
+    font-size: 5px;
+    line-height: 1;
+  }
+
+
+
+
+ /* 設問間の余白と縦並び設定 */
+.question-group {
+    display: flex;
+    flex-direction: column; /* 縦並びに変更 */
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  /* ボタンの基本スタイル */
+  .survey-btn {
+    width: 90%;
+    padding: 12px 24px;
+    border: 2px solid #bca790;
+    background-color: #ffffff;
+    color: #333333;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    
+    /* デフォルトの青枠やタップ時の青い閃光を無効化 */
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* 選択されたボタン（強調） */
+  .survey-btn.active {
+    background-color: #bca790;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 選択されていないボタン（薄くなる） */
+  .survey-btn.dimmed {
+    opacity: 0.4;
+    box-shadow: none;
+  }
